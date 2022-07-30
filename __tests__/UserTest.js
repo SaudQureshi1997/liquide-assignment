@@ -1,10 +1,7 @@
 import axios from "axios";
 import User from "#models/user.js";
-import { initialize } from "#root/utils/connections/database.js";
-import dotenv from "dotenv";
 
 describe("User acceptance test", () => {
-  beforeAll(() => dotenv.config());
 
   const register = (user) => {
     return axios.post(`${process.env.APP_URL}/auth/register`, user);
@@ -43,7 +40,6 @@ describe("User acceptance test", () => {
     } catch (e) {
       console.log(e);
     } finally {
-      await initialize();
       await User.deleteMany({ name: user.name });
     }
   });
@@ -64,7 +60,6 @@ describe("User acceptance test", () => {
     } catch (e) {
       console.log(e);
     } finally {
-      await initialize();
       await User.deleteMany({ name: user.name });
     }
   });
@@ -90,7 +85,6 @@ describe("User acceptance test", () => {
     } catch (e) {
       console.log(e);
     } finally {
-      await initialize();
       await User.deleteMany({ name: user.name });
     }
   });
