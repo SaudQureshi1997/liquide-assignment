@@ -7,7 +7,7 @@
   "module": "es2020",
   "scripts": {
     "start": "node -r dotenv/config server.js",
-    "test": "jest --config jest.config.json --no-cache --verbose --detectOpenHandles --forceExit"
+    "test": "jest --config jest.config.json --no-cache --forceExit"
   },
   "keywords": [],
   "author": "saudken52@gmail.com",
